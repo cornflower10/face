@@ -21,6 +21,7 @@
     <string name="compare_failed">compare failed!code is %d</string>
     <string name="register">register</string>
     <string name="liveness_detect">liveness detect</string>
+    <string name="swich_camera">swich_camera</string>
     <string name="face_manage">face manage</string>
     <string name="batch_register">batch register</string>
     <string name="notification_register">please put the images that need to register into directory \nsdcard/arcfacedemo/register</string>
