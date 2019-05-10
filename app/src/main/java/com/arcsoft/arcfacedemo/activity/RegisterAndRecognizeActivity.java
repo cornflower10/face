@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
 import android.hardware.Camera;
+import android.hardware.camera2.CameraCharacteristics;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -75,7 +76,7 @@ public class RegisterAndRecognizeActivity extends AppCompatActivity implements V
     /**
      * 优先打开的摄像头
      */
-    private Integer cameraID = Camera.CameraInfo.CAMERA_FACING_FRONT;
+    private Integer cameraID = CameraCharacteristics.LENS_FACING_BACK;
     private FaceEngine faceEngine;
     private FaceHelper faceHelper;
     private List<CompareResult> compareResultList;
@@ -83,7 +84,7 @@ public class RegisterAndRecognizeActivity extends AppCompatActivity implements V
     /**
      * 活体检测的开关
      */
-    private boolean livenessDetect = true;
+    private boolean livenessDetect = false;
 
     /**
      * 注册人脸状态码，准备注册
@@ -176,7 +177,7 @@ public class RegisterAndRecognizeActivity extends AppCompatActivity implements V
                     release();
                     unInitEngine();
                     initEngine();
-                    initCamera(Camera.CameraInfo.CAMERA_FACING_BACK);
+                    initCamera(CameraCharacteristics.LENS_FACING_FRONT);
                     if (cameraHelper != null) {
                         cameraHelper.start();
                     }
