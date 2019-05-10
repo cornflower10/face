@@ -118,7 +118,7 @@ public class FaceHelper {
                  * 活体检测只支持一个人脸，所以只保留最大的人脸
                  * 若需要多人脸搜索，删除此行代码，并且关闭活体判断
                  */
-                TrackUtil.keepMaxFace(faceInfoList);
+//                TrackUtil.keepMaxFace(faceInfoList);
 
                 refreshTrackId(faceInfoList);
                 code = faceEngine.process(nv21, previewSize.width, previewSize.height, FaceEngine.CP_PAF_NV21, faceInfoList, FaceEngine.ASF_LIVENESS);
